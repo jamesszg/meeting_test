@@ -1,0 +1,44 @@
+<template>
+  <img src="./assets/logo.png">
+  <div>
+    <p>
+      提供 el-fade-in-linear 和 el-fade-in 两种效果。
+    </p>
+
+    <el-button type="primary" @click="show = !show">渐变</el-button>
+    <div style="display: flex; margin-top: 20px; height: 100px;">
+      <transition name='el-fade-in-linear'>
+        <div v-show='show' class="transition-box">
+          true
+        </div>
+      </transition>
+    </div>
+  </div>
+
+  <HelloWorld msg="Welcome to Your Vue.js App"/>
+</template>
+
+<script>
+import HelloWorld from './components/HelloWorld.vue'
+
+export default {
+  name: 'App',
+  components: {
+    HelloWorld
+  },
+  data: () => ({
+    show: true
+  })
+}
+</script>
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
